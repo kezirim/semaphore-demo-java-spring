@@ -47,7 +47,11 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -108,6 +112,12 @@
 			<properties>
 				<maven.test.skip>false</maven.test.skip>
 				<myTestSourceDirectory>${project.basedir}/src/it/java</myTestSourceDirectory>
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<maven.test.skip>true</maven.test.skip>
 			</properties>
 		</profile>
 	</profiles>
